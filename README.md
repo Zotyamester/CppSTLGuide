@@ -21,7 +21,7 @@ Even if it's for a single print or scan it's **needed**.
 And I feel like I'm repeating myself, but it is one of things where C++ really shines.
 
 Imagine how you can concat two strings by creating another one in C:
-'''
+```
 char *new_str = malloc(strlen(str1) + strlen(str2) + 1);
 if (!new_str)
   goto ERROR; // it's more like the (T)ERROR of C
@@ -29,11 +29,11 @@ strcpy(new_str, str1);
 strcat(new_str, str2);
 
 ERROR:
-'''
+```
 The same in C++ using STL:
-'''
+```
 std::string new_str = str1 + str2; // sure, str1 must be an std::string, but you get the idea
-'''
+```
 
 It really gives you everything that you could probably think of (or what you'll ever need).
 It has:
@@ -50,7 +50,7 @@ Don't worry! It's really easy to understand.
 If the name doesn't mean anything to you, let me put it this way: dynamic array.
 Its size can be extended anytime unlike regular arrays'.
 Here's an example showing the basics of std::vector:
-'''
+```
 std::vector<int> vec(10); // pre-defining how many items to have by default
 for (int i = 0; i < 10; i++)
   vec[i] = i + 1;
@@ -58,16 +58,26 @@ vec.pop_back();
 vec.reverse();
 vec.push_back(0);
 // 9, 8, 7, 6, 5, 4, 3, 2, 1, 0
-'''
+```
 ### std::list
-
+Lists are generally unpreferred in C++ since they are implemented as linked lists.
+Though ff you have to delete lots of (big) items it is still better.
+Here's an example:
+```
+std::list<std::string> words;
+words.push_back("C++");
+words.push_back("test");
+words.pop_back();
+words.push_front("love");
+words.push_front("I");
+```
 
 ### std::map and std::set
 If you know Python then map is the new dict and set remains set.
 If not, then I'll explain a bit.
 Map lets you store values by keys.
-Set stores values in a way, that it'll be easy to find an element when you need to.
-'''
+Another example:
+```
 std::map<std::string, int> entries = {
   {"C++", 123},
   {"Assembly", 9},
@@ -80,17 +90,17 @@ if (entry != entries.end())
   // found, access data by *entry
 else
   // not found
-'''
-Set suppports insertion as the following:
-'''
+```
+Set stores values in a way, that it'll be easy to find an element when you need to.
+It suppports insertion as the following:
+```
 std::set<int> s;
 s.insert(1);
 s.insert(1); // does nothing, 1 is already in the set
 s.insert(10);
-'''
+```
 And searching for the elements works the same as with maps.
 Both sets and maps are pretty fast when an element when you have to search in the container.
-
 
 ## Iterators
 There are iterators for every mentioned containers and even for strings.
@@ -98,8 +108,8 @@ There are iterators for every mentioned containers and even for strings.
 ## Algorithms
 C++ also has template algorithms in the standard library.
 It also has lots of functions so I'll just show a few of them.
-Here's an example showing the usage of **min**, **max** and **sort**.
-'''
+Here's an example showing the usage of **min**, **max** and **sort**:
+```
 std::string a = "Assembly", "Basic";
 std::min(a, b);
 ...
@@ -108,7 +118,7 @@ std::max(a, b);
 ...
 std::vector<int> v = {1, 5, 3, 4, 2};
 std::sort(v.begin(), v.end());
-'''
+```
 
 ## Etcetera
 So far so good. But there's more. (*winky face*)
