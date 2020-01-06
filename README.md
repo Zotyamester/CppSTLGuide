@@ -2,14 +2,14 @@
 ---
 *This guide is intended to help you get started with Standard Template Library in C++*
 The Standard Template Library is one of the reasons why C++ lets you write programs much faster than how you could do that in C.
-Woah... Did I just say C?
-Yeeeah, just to make it clear. Sorry about that, but I'll mention it quite a lot through the guide, because I like
+*Woah... Did I just say C?*
+Just to make it clear. Sorry about that, but I'll mention it quite a lot of times through the guide, because I like
 comparing C++'s features to C's.
 It has tons of great features such as strings, data structures, algorithms, iterators and much more.
 
 I divided this guide into 5 sections:
 - **Strings**
-- **Containers*
+- **Containers**
 - **Algorithms**
 - **Iterators**
 - ***Etcetera***
