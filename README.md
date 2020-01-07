@@ -64,12 +64,14 @@ Lists are generally unpreferred in C++ since they are implemented as linked list
 Though ff you have to delete lots of (big) items it is still better.
 Here's an example:
 ```
-std::list<std::string> words;
+std::list<std::string> words = {"nothing"};
+words.pop_back();
 words.push_back("C++");
 words.push_back("test");
 words.pop_back();
 words.push_front("love");
 words.push_front("I");
+// I love C++
 ```
 
 ### std::map and std::set
@@ -94,7 +96,7 @@ else
 Set stores values in a way, that it'll be easy to find an element when you need to.
 It suppports insertion as the following:
 ```
-std::set<int> s;
+std::set<int> s = {2, 3};
 s.insert(1);
 s.insert(1); // does nothing, 1 is already in the set
 s.insert(10);
@@ -104,6 +106,17 @@ Both sets and maps are pretty fast when an element when you have to search in th
 
 ## Iterators
 There are iterators for every mentioned containers and even for strings.
+To iterate over the elements of a container you have to get the first and the last iterator of it.
+```
+start = iterable.begin();
+end = iterable.end();
+```
+Let's see an example of iterating over a vector:
+```
+std::vector<int> v = {1, 2, 3, 4};
+for (auto it = v.begin(); it != v.end(); it++)
+  // do something, you can access the item as *it
+```
 
 ## Algorithms
 C++ also has template algorithms in the standard library.
@@ -119,6 +132,7 @@ std::max(a, b);
 std::vector<int> v = {1, 5, 3, 4, 2};
 std::sort(v.begin(), v.end());
 ```
+It's also worth mentioning that most of the standard algorithms are based on iterators (which we discussed earlier).
 
 ## Etcetera
 So far so good. But there's more. (*winky face*)
