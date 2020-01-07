@@ -12,7 +12,8 @@ I divided this guide into 5 sections:
 - **Containers**
 - **Algorithms**
 - **Iterators**
-- ***Etcetera***
+- ***Complex example***
+- ***Final thoughts***
 
 ## Strings
 String is a must.
@@ -206,7 +207,7 @@ int main()
 }
 ```
 
-## Etcetera
+## Final thoughts
 So far so good. But there's more. (*winky face*)
 One of the most hated things in C is dealing with pointers.
 If you never had such problems, lucky you. But even if you had, it's no longer a thing. (well part of)
