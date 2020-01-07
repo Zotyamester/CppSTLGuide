@@ -134,6 +134,78 @@ std::sort(v.begin(), v.end());
 ```
 It's also worth mentioning that most of the standard algorithms are based on iterators (which we discussed earlier).
 
+## Complex example
+```
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <numeric>
+
+using namespace std; // for the sake of simplicity
+
+vector<double> GetData()
+{
+  int count;
+  
+  cout << "How many entries would you like to enter, sir?" << endl;
+  cin >> count;
+  
+  vector<double> data(count);
+  
+  for (int i = 0; i < count; i++) {
+    cout << "Entry " << (i + 1) << ": ";
+    cin >> data[i];
+  }
+  
+  return data;
+}
+
+double GetAverage(const vector<double>& data)
+{
+  return accumulate(data.begin(), data.end(), 0.0) / data.size();
+}
+
+double GetMode(const vector<double>& data)
+{
+  map<double, int> freq;
+  
+  for (auto it = data.begin(); it != data.end(); it++)
+    freq[*it]++;
+  
+  auto max_it = max_element(freq.begin(), freq.end(),
+    [] (const pair<double, int>& p1, const pair<double, int>& p2) {
+      return p1.second < p2.second;
+    }
+   );
+  
+  return max_it->first;
+}
+
+// Side effect: Sorts the vector
+double GetMedian(vector<double>& data)
+{
+  sort(data.begin(), data.end());
+  int size = data.size();
+  if (size % 2 == 0)
+    return (data[size / 2] + data[size / 2 - 1]) / 2.0;
+  else
+    return data[size / 2];
+}
+
+int main()
+{
+  vector<double> data = GetData();
+  double average = GetAverage(data);
+  double mode = GetMode(data);
+  double median = GetMedian(data);
+  cout << "Average: " << average << endl;
+  cout << "Mode: " << mode << endl;
+  cout << "Median: " << median << endl;
+}
+```
+
 ## Etcetera
 So far so good. But there's more. (*winky face*)
 One of the most hated things in C is dealing with pointers.
