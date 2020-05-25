@@ -137,7 +137,7 @@ std::sort(v.begin(), v.end());
 ```
 It's also worth mentioning that most of the standard algorithms are based on iterators (which we discussed earlier).
 
-## Complex example
+## Sample program
 ```
 #include <iostream>
 #include <string>
