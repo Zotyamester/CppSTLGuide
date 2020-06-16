@@ -105,7 +105,7 @@ s.insert(1); // does nothing, 1 is already in the set
 s.insert(10);
 ```
 And searching for the elements works the same as with maps.
-Both sets and maps are pretty fast when an element when you have to search in the container.
+Both set and map are pretty fast when you have to search for an element in the container.
 
 ## Iterators
 There are iterators for every mentioned containers and even for strings.
