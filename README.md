@@ -9,13 +9,14 @@ comparing C++'s features to C's.
 
 It has tons of great features such as strings, data structures, algorithms, iterators and much more.
 
+## Contents
 I divided this guide into 5 sections:
 - **Strings**
 - **Containers**
 - **Algorithms**
 - **Iterators**
-- ***Complex example***
-- ***Final thoughts***
+- **Sample program**
+- **Final thoughts**
 
 ## Strings
 String is a must.
