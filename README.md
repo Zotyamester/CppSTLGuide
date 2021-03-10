@@ -24,7 +24,7 @@ There are almost no programs that don't involve strings in it somehow.
 Even if it's for a single print or scan it's **needed**.
 And I feel like I'm repeating myself, but it is one of things where C++ really shines.
 
-Imagine how you can concat two strings by creating another one in C:
+Imagine how you would concatenate two strings by creating another one in C:
 ```
 char *new_str = malloc(strlen(str1) + strlen(str2) + 1);
 if (!new_str)
@@ -40,6 +40,7 @@ std::string new_str = str1 + str2; // sure, str1 must be an std::string, but you
 ```
 
 It really gives you everything that you could probably think of (or what you'll ever need).
+
 It has:
 - dynamic resizing, you'll never have to use malloc again
 - takes O(1) to get the length of it, because it keeps track of the current size
