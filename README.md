@@ -1,5 +1,4 @@
 # Getting started with STL in C++
----
 *This guide is intended to help you get started with Standard Template Library in C++*
 The Standard Template Library is one of the reasons why C++ lets you write programs much faster than how you could do that in C.
 
@@ -25,7 +24,7 @@ Even if it's for a single print or scan it's **needed**.
 And I feel like I'm repeating myself, but it is one of things where C++ really shines.
 
 Imagine how you would concatenate two strings by creating another one in C:
-```
+```c
 char *new_str = malloc(strlen(str1) + strlen(str2) + 1);
 if (!new_str)
   goto ERROR; // it's more like the (T)ERROR of C
@@ -35,7 +34,7 @@ strcat(new_str, str2);
 ERROR:
 ```
 The same in C++ using STL:
-```
+```cpp
 std::string new_str = str1 + str2; // sure, str1 must be an std::string, but you get the idea
 ```
 
@@ -55,7 +54,7 @@ Don't worry! It's really easy to understand.
 If the name doesn't mean anything to you, let me put it this way: dynamic array.
 Its size can be extended anytime unlike regular arrays'.
 Here's an example showing the basics of std::vector:
-```
+```cpp
 std::vector<int> vec(10); // pre-defining how many items to have by default
 for (int i = 0; i < 10; i++)
   vec[i] = i + 1;
@@ -68,7 +67,7 @@ vec.push_back(0);
 Lists are generally unpreferred in C++ since they are implemented as linked lists.
 Though ff you have to delete lots of (big) items it is still better.
 Here's an example:
-```
+```cpp
 std::list<std::string> words = {"nothing"};
 words.pop_back();
 words.push_back("C++");
@@ -84,7 +83,7 @@ If you know Python then map is the new dict and set remains set.
 If not, then I'll explain a bit.
 Map lets you store values by keys.
 Another example:
-```
+```cpp
 std::map<std::string, int> entries = {
   {"C++", 123},
   {"Assembly", 9},
@@ -100,7 +99,7 @@ else
 ```
 Set stores values in a way, that it'll be easy to find an element when you need to.
 It suppports insertion as the following:
-```
+```cpp
 std::set<int> s = {2, 3};
 s.insert(1);
 s.insert(1); // does nothing, 1 is already in the set
@@ -112,12 +111,12 @@ Both set and map are pretty fast when you have to search for an element in the c
 ## Iterators
 There are iterators for every mentioned containers and even for strings.
 To iterate over the elements of a container you have to get the first and the last iterator of it.
-```
+```cpp
 start = iterable.begin();
 end = iterable.end();
 ```
 Let's see an example of iterating over a vector:
-```
+```cpp
 std::vector<int> v = {1, 2, 3, 4};
 for (auto it = v.begin(); it != v.end(); it++)
   // do something, you can access the item as *it
@@ -127,7 +126,7 @@ for (auto it = v.begin(); it != v.end(); it++)
 C++ also has template algorithms in the standard library.
 It also has lots of functions so I'll just show a few of them.
 Here's an example showing the usage of **min**, **max** and **sort**:
-```
+```cpp
 std::string a = "Assembly", "Basic";
 std::min(a, b);
 ...
@@ -140,7 +139,7 @@ std::sort(v.begin(), v.end());
 It's also worth mentioning that most of the standard algorithms are based on iterators (which we discussed earlier).
 
 ## Sample program
-```
+```cpp
 #include <iostream>
 #include <string>
 #include <vector>
