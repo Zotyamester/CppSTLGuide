@@ -1,14 +1,18 @@
 # Getting started with STL in C++
-*This guide is intended to help you get started with Standard Template Library in C++*
+
+*This guide is intended to help you get started with Standard Template Library in C++.*
+
 The Standard Template Library is one of the reasons why C++ lets you write programs much faster than how you could do that in C.
 
 *Woah... Did I just say C?*
+
 Just to make it clear. Sorry about that, but I'll mention it quite a lot of times through the guide, because I like
 comparing C++'s features to C's.
 
 It has tons of great features such as strings, data structures, algorithms, iterators and much more.
 
 ## Contents
+
 I divided this guide into 5 sections:
 - **Strings**
 - **Containers**
@@ -18,7 +22,9 @@ I divided this guide into 5 sections:
 - **Final thoughts**
 
 ## Strings
+
 String is a must.
+
 There are almost no programs that don't involve strings in it somehow.
 Even if it's for a single print or scan it's **needed**.
 And I feel like I'm repeating myself, but it is one of things where C++ really shines.
@@ -46,11 +52,14 @@ It has:
 - supports reading/writing through the stdio
 
 ## Containers
+
 In this section I further divided the topic into subcomponents.
 The thing that is the same in all of them is that every single one is a template.
 So you can store any kind of data structures in these.
 Don't worry! It's really easy to understand.
+
 ### std::vector
+
 If the name doesn't mean anything to you, let me put it this way: dynamic array.
 Its size can be extended anytime unlike regular arrays'.
 Here's an example showing the basics of std::vector:
@@ -63,7 +72,9 @@ vec.reverse();
 vec.push_back(0);
 // 9, 8, 7, 6, 5, 4, 3, 2, 1, 0
 ```
+
 ### std::list
+
 Lists are generally unpreferred in C++ since they are implemented as linked lists.
 Though ff you have to delete lots of (big) items it is still better.
 Here's an example:
@@ -79,6 +90,7 @@ words.push_front("I");
 ```
 
 ### std::map and std::set
+
 If you know Python then map is the new dict and set remains set.
 If not, then I'll explain a bit.
 Map lets you store values by keys.
@@ -109,6 +121,7 @@ And searching for the elements works the same as with maps.
 Both set and map are pretty fast when you have to search for an element in the container.
 
 ## Iterators
+
 There are iterators for every mentioned containers and even for strings.
 To iterate over the elements of a container you have to get the first and the last iterator of it.
 ```cpp
@@ -123,6 +136,7 @@ for (auto it = v.begin(); it != v.end(); it++)
 ```
 
 ## Algorithms
+
 C++ also has template algorithms in the standard library.
 It also has lots of functions so I'll just show a few of them.
 Here's an example showing the usage of **min**, **max** and **sort**:
@@ -139,6 +153,7 @@ std::sort(v.begin(), v.end());
 It's also worth mentioning that most of the standard algorithms are based on iterators (which we discussed earlier).
 
 ## Sample program
+
 ```cpp
 #include <iostream>
 #include <string>
@@ -211,6 +226,7 @@ int main()
 ```
 
 ## Final thoughts
+
 So far so good. But there's more. (*winky face*)
 One of the most hated things in C is dealing with pointers.
 If you never had such problems, lucky you. But even if you had, it's no longer a thing. (well part of)
