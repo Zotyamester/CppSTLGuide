@@ -141,7 +141,7 @@ C++ also has template algorithms in the standard library.
 It also has lots of functions so I'll just show a few of them.
 Here's an example showing the usage of **min**, **max** and **sort**:
 ```cpp
-std::string a = "Assembly", "Basic";
+std::string a = "Assembly", b = "Basic";
 std::min(a, b);
 ...
 int a = 5, b = 3;
